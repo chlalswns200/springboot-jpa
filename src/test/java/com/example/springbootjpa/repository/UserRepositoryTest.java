@@ -15,8 +15,9 @@ class UserRepositoryTest {
 
     @Test
     void findByName() {
-        String str = "userA";
+        String str = "userC";
         User byUserName = userRepository.findByUserName(str);
+        System.out.println("byUserName.getId() = " + byUserName.getId());
         System.out.println("byUserName.getUserName() = " + byUserName.getUserName());
         System.out.println("byUserName.getPassword() = " + byUserName.getPassword());
 
