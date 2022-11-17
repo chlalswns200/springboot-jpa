@@ -8,5 +8,5 @@ import lombok.Getter;
 public class UserAddResponse {
 
     private String userName;
-    private String password;
+    private String comment;
 }
