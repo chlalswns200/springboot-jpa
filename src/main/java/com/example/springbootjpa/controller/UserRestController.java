@@ -29,17 +29,17 @@ public class UserRestController {
         if (byId.isPresent()) {
             return ResponseEntity.ok().body(byId.get());
         } else {
-            return null;
+            return ResponseEntity.ok().body(new User("해당 id의 유저는 없습니다","0"));
         }
     }
 
     @PostMapping("/new")
     public ResponseEntity<UserAddResponse> add(@RequestBody UserAddRequest dto) {
         User user = userService.addUser(dto);
-        if (user != null) {
+        if (user.getId() != null) {
             return ResponseEntity.ok().body(new UserAddResponse(user.getUserName(), user.getPassword()));
         } else {
-            return null;
+            return ResponseEntity.ok().body(new UserAddResponse("이미 사용중인 userName 입니다.","0"));
         }
     }
 }
