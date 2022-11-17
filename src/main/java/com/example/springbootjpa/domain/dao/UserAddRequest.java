@@ -1,7 +1,7 @@
-package domain.dao;
+package com.example.springbootjpa.domain.dao;
 
 
-import domain.User;
+import com.example.springbootjpa.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

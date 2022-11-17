@@ -1,4 +1,4 @@
-package domain.dao;
+package com.example.springbootjpa.domain.dao;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

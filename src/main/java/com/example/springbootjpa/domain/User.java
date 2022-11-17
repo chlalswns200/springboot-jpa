@@ -1,16 +1,15 @@
-package domain;
+package com.example.springbootjpa.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 public class User {
 
     @Id
@@ -24,4 +23,5 @@ public class User {
         this.userName = userName;
         this.password = password;
     }
+
 }
