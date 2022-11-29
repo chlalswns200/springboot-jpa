@@ -18,7 +18,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
-@WebMvcTest
+@WebMvcTest(UserRestControllerTest.class)
+
 class UserRestControllerTest {
 
     @Autowired
@@ -52,5 +53,11 @@ class UserRestControllerTest {
                 .andExpect(jsonPath("$.id").isEmpty())
                 .andExpect(jsonPath("$.comment").value("해당 id의 유저가 없습니다"))
                 .andDo(print());
+    }
+
+    @Test
+    @DisplayName("생성이 잘되는지")
+    void addUser() throws Exception{
+
     }
 }

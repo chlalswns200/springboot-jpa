@@ -26,11 +26,7 @@ public class UserRestController {
 
     @PostMapping("/new")
     public ResponseEntity<UserAddResponse> add(@RequestBody UserAddRequest dto) {
-        User user = userService.addUser(dto);
-        if (user.getId() != null) {
-            return ResponseEntity.ok().body(new UserAddResponse(user.getId(),user.getUserName(), "유저 등록 완료"));
-        } else {
-            return ResponseEntity.ok().body(new UserAddResponse(null,"이미 사용중인 userName입니다"));
-        }
+        UserAddResponse userAddResponse = userService.addUser(dto);
+        return ResponseEntity.ok().body(userAddResponse);
     }
 }
